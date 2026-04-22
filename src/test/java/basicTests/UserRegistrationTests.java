@@ -20,9 +20,9 @@ public class UserRegistrationTests {
         String userRegistrationPayload = "{\n" +
                 "  \"firstName\": \"Lebo\",\n" +
                 "  \"lastName\": \"Testing\",\n" +
-                "  \"email\": \"Group22Test@test.com\",\n" +
+                "  \"email\": \"Group01Test@test.com\",\n" +
                 "  \"password\": \"1234567!\",\n" +
-                "  \"confirmPassword\": \"1234567!\",\n" +
+                "  \"confirmPassword\": \"1234567!\",\n" +g
                 "  \"groupId\": \"c1ce77c4-bd1a-42ae-901f-fc3e534c55b8\"\n" +
                 "}";
 
