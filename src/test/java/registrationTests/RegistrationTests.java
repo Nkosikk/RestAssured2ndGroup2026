@@ -9,6 +9,9 @@ import requestBuilder.UserRequestBuilder;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.Assert;
+import utils.DatabaseConnection;
+
+import java.sql.SQLException;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -25,14 +28,16 @@ public class RegistrationTests {
     static Faker faker = new Faker();
 
     @BeforeClass
-    public static void setUpData() {
+    public static void setUpData() throws SQLException {
         firstName = faker.name().firstName();
         lastName = faker.name().lastName();
-        email = "Group2" + faker.internet().emailAddress();
-        password = "7654321!";
+//        email = "Group2" + faker.internet().emailAddress();
+//        password = "7654321!";
         groupId = "5328c91e-fc40-11f0-8e00-5000e6331276";
         adminEmail = "admin@gmail.com";
         adminPassword = "@12345678";
+
+        DatabaseConnection.dbConnection();
 
     }
 
@@ -67,7 +72,7 @@ public class RegistrationTests {
 
     @Test (priority = 4)
     public void userLoginTest() {
-       requestBuilder.UserRequestBuilder.loginUser(email, password)
+       requestBuilder.UserRequestBuilder.loginUser(DatabaseConnection.getEmail, DatabaseConnection.getPassword)
                 .then().log().all()
                 .assertThat()
                 .statusCode(200)
