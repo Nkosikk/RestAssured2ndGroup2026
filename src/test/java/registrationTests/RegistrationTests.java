@@ -31,8 +31,8 @@ public class RegistrationTests {
     public static void setUpData() throws SQLException {
         firstName = faker.name().firstName();
         lastName = faker.name().lastName();
-//        email = "Group2" + faker.internet().emailAddress();
-//        password = "7654321!";
+        email = "Group2" + faker.internet().emailAddress();
+        password = "7654321!";
         groupId = "5328c91e-fc40-11f0-8e00-5000e6331276";
         adminEmail = "admin@gmail.com";
         adminPassword = "@12345678";
